@@ -5,7 +5,7 @@ public class ProgramTermination {
 
     private static boolean buttonXPressed = false; // by default buttonXPressed is set to false
 
-    public static void termination(SwiftBotAPI swiftbot) { // passing parameters
+    public static void termination(SwiftBotAPI swiftbot) { // passing parameter
         /* This method runs when the pattern is not squareLoop */
         if (Movement.squareloopcheck == false) {
             swiftbot.enableButton(Button.X, () -> {
