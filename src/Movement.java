@@ -3,12 +3,6 @@ import java.util.Scanner;
 
 public class Movement {
     
-    /*
-     * Public means it can be accessed by any class
-     * static means that a new creation of an instance is not 
-     * 
-     * No private variables as all of the variables are used in different classes and hence set to static
-     */
     static int zigLength;
     static int zigNumber;
     static int wheelSpeed;
@@ -24,12 +18,7 @@ public class Movement {
         swiftbot = new SwiftBotAPI();  
         
         System.out.println("Press any key to start...");
-        /*
-         * Abstraction: My methods (modeSelection, patternSelection, zigZag, squareLoop, etc.)
-         * abstract away the complexities of operations. Users of my class don't need to know the inner workings of
-         * these methods to use them, they just need to know what they do. This is a form of Abstraction as
-         * complex operations are hidden from the user and makes it easy to understand
-         */
+      
         scanner.nextLine();
         userInstructions();  // calling user instructions method
         QrCodeHandling.qrScan(swiftbot); //calling qrScan method from QrCodeHandling Class
@@ -48,15 +37,15 @@ public class Movement {
             System.out.println("Select Mode:");
             System.out.println("Press 1: Normal Mode");
             System.out.println("Press 2: Energy Efficiency Mode");
-            String ModeSelection = scanner.nextLine(); // asks the user for an input for Mode Selection and stores it in a string
+            String ModeSelection = scanner.nextLine(); 
 
             switch (ModeSelection) { 
                 case "1":     
                     normalMode(); // here the switch takes userInput and if its 1 then it will run Normal Mode 
-                    return; // returning
+                    return; 
                 case "2":
-                    energyEfficiencyMode(); // here the switch takes userInput and if its 1 then it will run energyEfficiencyMode Mode 
-                    return; // returning
+                    energyEfficiencyMode(); // here the switch takes userInput and if its 2 then it will run energyEfficiencyMode Mode 
+                    return; 
             }
         }
     }
@@ -76,10 +65,10 @@ public class Movement {
             switch (patternSelection) {
                 case "1":
                     zigZag();
-                    return; //  exiting after a valid input
+                    return;
                 case "2":
                     squareLoop();
-                    return; //  exiting after a valid input
+                    return; 
             }
         }
     }
